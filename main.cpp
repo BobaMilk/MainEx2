@@ -9,12 +9,12 @@ public:
     double getArea() const;
     double getRadius() const;
     void setRadius(double r);
-    bool operator<(Circle& const obj1);
-    bool operator<=(Circle& const obj1);
-    bool operator>(Circle& const obj1);
-    bool operator>=(Circle& const obj1);
-    bool operator==(Circle& const obj1);
-    bool operator!=(Circle& const obj1);
+    bool operator<(Circle& const obj1); //Operator overload
+    bool operator<=(Circle& const obj1); //Operator overload
+    bool operator>(Circle& const obj1); //Operator overload
+    bool operator>=(Circle& const obj1); //Operator overload
+    bool operator==(Circle& const obj1); //Operator overload
+    bool operator!=(Circle& const obj1); //Operator overload
 private:
     double radius;
 };
@@ -26,7 +26,7 @@ Circle::Circle(double r) {
     radius = r;
 }
 double Circle::getArea() const {
-    return 3.14159265 * radius * radius;
+    return 3.14159265 * radius * radius; //Math to find the area
 }
 double Circle::getRadius() const {
     return radius;
@@ -34,44 +34,44 @@ double Circle::getRadius() const {
 void Circle::setRadius(double r) {
     radius = r;
 }
-bool Circle::operator<(Circle& const obj1) {
+bool Circle::operator<(Circle& const obj1) {  //Operator overload
     if (radius < obj1.getRadius()) {
         return true;
     }
     return false;
 }
-bool Circle::operator<=(Circle& const obj1) {
+bool Circle::operator<=(Circle& const obj1) { //Operator overload
     if (radius <= obj1.getRadius()) {
         return true;
     }
     return false;
 }
-bool Circle::operator>(Circle& const obj1) {
+bool Circle::operator>(Circle& const obj1) { //Operator overload
     if (radius > obj1.getRadius()) {
         return true;
     }
     return false;
 }
-bool Circle::operator>=(Circle& const obj1) {
+bool Circle::operator>=(Circle& const obj1) { //Operator overload
     if (radius >= obj1.getRadius()) {
         return true;
     }
     return false;
 }
-bool Circle::operator==(Circle& const obj1) {
+bool Circle::operator==(Circle& const obj1) { //Operator overload
     if (radius == obj1.getRadius()) {
         return true;
     }
     return false;
 }
-bool Circle::operator!=(Circle& const obj1) {
-    if (radius != obj1.getRadius()) {
+bool Circle::operator!=(Circle& const obj1) { //Operator overload
+    if (radius != obj1.getRadius()) { 
         return true;
     }
     return false;
 }
 
-void compare(Circle& obj1, Circle& obj2) {
+void compare(Circle& obj1, Circle& obj2) { //Compares the radius of obj1 and obj2
     if (obj1 == obj2) {
         cout << "They are both the same\n";
     }
@@ -97,7 +97,7 @@ int main()
 {
     double userInput;
 
-    do {
+    do { //Runs until the user is done. Gets the radius values, prints the area for both and then compares them both.
         cout << "Please enter a number for the first radius or -1 to quit:\n";
         cin >> userInput;
         if (userInput == -1) {
